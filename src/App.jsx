@@ -15,6 +15,24 @@ function App() {
     <>
       <h1>Users Management System</h1>
       <h3>Numbers Of Users : {users.length}</h3>
+      <form>
+        <input type="text" name="name" />
+        <br />
+        <input type="email" name="email" />
+        <br />
+        <input type="submit" value="add user" />
+      </form>
+      <div>
+        {users.map((user) => {
+          return (
+            <div key={user.id}>
+              <h3>Name : {user.name}</h3>
+              <h3>Email : {user.email}</h3>
+              <h3>Id : {user.id}</h3>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
