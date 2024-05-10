@@ -11,11 +11,20 @@ function App() {
       .then((data) => setUsers(data));
   }, []);
 
+  const handleAddUser = (e) => {
+    e.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const user = { name, email };
+    console.log(user);
+  };
+
   return (
     <>
       <h1>Users Management System</h1>
       <h3>Numbers Of Users : {users.length}</h3>
-      <form>
+      <form onSubmit={handleAddUser}>
         <input type="text" name="name" />
         <br />
         <input type="email" name="email" />
